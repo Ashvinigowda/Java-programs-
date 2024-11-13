@@ -1,0 +1,20 @@
+package CIE;
+
+public class Student {
+    // Member variables
+    protected String usn;
+    protected String name;
+    protected int sem;
+    
+    // Constructor
+    public Student(String usn, String name, int sem) {
+        this.usn = usn;
+        this.name = name;
+        this.sem = sem;
+    }
+
+    // Method to display student details
+    public void displayStudentDetails() {
+        System.out.println("USN: " + usn + ", Name: " + name + ", Semester: " + sem);
+    }
+}

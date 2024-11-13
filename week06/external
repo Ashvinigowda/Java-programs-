@@ -1,0 +1,28 @@
+package SEE;
+
+import CIE.Student;
+
+public class External extends Student {
+    // Array to store external marks (SEE marks)
+    private int[] externalMarks = new int[5];
+
+    // Constructor
+    public External(String usn, String name, int sem, int[] externalMarks) {
+        super(usn, name, sem); // Call parent constructor
+        this.externalMarks = externalMarks;
+    }
+
+    // Method to display external marks
+    public void displayExternalMarks() {
+        System.out.print("External Marks: ");
+        for (int mark : externalMarks) {
+            System.out.print(mark + " ");
+        }
+        System.out.println();
+    }
+
+    // Getter for external marks
+    public int[] getExternalMarks() {
+        return externalMarks;
+    }
+}

@@ -1,4 +1,3 @@
-//mainprogram
 import CIE.Internals;
 import SEE.External;
 import java.util.Scanner;
@@ -6,19 +5,12 @@ import java.util.Scanner;
 public class Studentmarks {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Input the number of students
         System.out.print("Enter number of students: ");
         int n = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
-
-        // Arrays to store CIE and SEE students
+        scanner.nextLine(); 
         Internals[] cieStudents = new Internals[n];
         External[] seeStudents = new External[n];
-
-        // Input student details and marks
         for (int i = 0; i < n; i++) {
-            // Input CIE student details and internal marks
             System.out.println("Enter details for CIE Student " + (i + 1) + ": ");
             System.out.print("USN: ");
             String usn = scanner.nextLine();
@@ -32,9 +24,7 @@ public class Studentmarks {
                 internalMarks[j] = scanner.nextInt();
             }
             cieStudents[i] = new Internals(usn, name, sem, internalMarks);
-            scanner.nextLine(); // Consume newline
-
-            // Input SEE student details and external marks
+            scanner.nextLine(); 
             System.out.println("Enter details for SEE Student " + (i + 1) + ": ");
             System.out.print("USN: ");
             usn = scanner.nextLine();
@@ -48,18 +38,13 @@ public class Studentmarks {
                 externalMarks[j] = scanner.nextInt();
             }
             seeStudents[i] = new External(usn, name, sem, externalMarks);
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
         }
-
-        // Display final marks for all students
         System.out.println("\nFinal Marks for all students:");
 
         for (int i = 0; i < n; i++) {
-            // Display details of CIE student
             cieStudents[i].displayStudentDetails();
             cieStudents[i].displayInternalMarks();
-
-            // Display details of SEE student
             seeStudents[i].displayStudentDetails();
             seeStudents[i].displayExternalMarks();
 
@@ -70,8 +55,6 @@ public class Studentmarks {
             for (int j = 0; j < 5; j++) {
                 finalMarks[j] = internalMarks[j] + externalMarks[j];
             }
-
-            // Display final marks
             System.out.print("Final Marks: ");
             for (int mark : finalMarks) {
                 System.out.print(mark + " ");

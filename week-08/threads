@@ -16,7 +16,7 @@ class DisplayMessage2 extends Thread {
         try {
             while (true) {
                 System.out.println("CSE");
-                Thread.sleep(2000); // Sleep for 2 seconds
+                Thread.sleep(2000); 
             }
         } catch (InterruptedException e) {
             System.out.println(e);
@@ -29,8 +29,6 @@ public class MultiThreadingExample {
         // Create instances of the threads
         DisplayMessage1 thread1 = new DisplayMessage1();
         DisplayMessage2 thread2 = new DisplayMessage2();
-
-        // Start the threads
         thread1.start();
         thread2.start();
     }
